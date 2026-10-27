@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simone Vergari — Junior Software Developer</title>
+<meta name="description" content="Portfolio di Simone Vergari: junior software developer, laureando in Informatica alla Sapienza. Progetti in Go, Vue.js, Java e PHP.">
+<meta name="theme-color" content="#7c3aed">
+<meta property="og:title" content="Simone Vergari — Junior Software Developer">
+<meta property="og:description" content="Laureando in Informatica alla Sapienza. Progetti, stack, interessi e contatti.">
+<meta property="og:type" content="profile">
+<meta property="og:locale" content="it_IT">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%237c3aed'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='16' font-weight='700' fill='white' text-anchor='middle'%3ESV%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f5f5f7}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+[hidden]{display:none !important}
+a{color:#7c3aed;text-decoration:none}a:hover{color:#5b21b6}
+.row::-webkit-scrollbar{display:none}
+@keyframes mark{0%,100%{outline-color:rgba(167,139,250,.25)}50%{outline-color:#a78bfa}}
+.hl{animation:mark 2.4s ease-in-out infinite}.hl2{animation-delay:1.2s}
+.navlinks{display:flex}
+.burger{display:none}
+.bl{transition:transform .3s cubic-bezier(.2,.8,.2,1),opacity .2s}
+@keyframes drop{from{opacity:0;transform:translateY(-8px) scale(.98)}to{opacity:1;transform:none}}
+@media (max-width: 760px){
+  .burger{display:inline-flex}
+  .navlinks{display:none}
+  .navlinks.open{display:flex;position:absolute;top:calc(100% + 10px);left:0;right:0;flex-direction:column;align-items:stretch !important;gap:2px !important;padding:10px;border-radius:24px;background:rgba(255,255,255,0.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 18px 50px rgba(17,12,46,.16);font-size:19px !important;font-weight:600 !important;animation:drop .25s ease-out}
+  .navlinks.open .navlink{display:flex;align-items:center;min-height:48px;padding:0 16px;border-radius:14px;color:#1d1d1f !important}
+  .navlinks.open .navlink:hover{background:#f5f3ff}
+  .burger.open .b-top{transform:translateY(5px) rotate(45deg)}
+  .burger.open .b-mid{opacity:0}
+  .burger.open .b-bot{transform:translateY(-5px) rotate(-45deg)}
+}
+
+.mono{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
+@keyframes blink{50%{opacity:0}}
+.caret{animation:blink 1s step-end infinite}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-18px) rotate(6deg)}}
+.glyph{position:absolute;animation:floaty 7s ease-in-out infinite;pointer-events:none;user-select:none}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(48,209,88,.55)}80%,100%{box-shadow:0 0 0 10px rgba(48,209,88,0)}}
+.live{animation:pulse 1.8s ease-out infinite}
+@keyframes blinkeye{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+.eyes{transform-box:fill-box;transform-origin:center;animation:blinkeye 4.5s infinite}
+@keyframes idle{0%,100%{transform:translateY(0)}50%{transform:translateY(-0.6px)}}
+.sprite{animation:idle 1.2s steps(1) infinite}
+@keyframes pxblink{0%,90%,96%,100%{opacity:1}92%,94%{opacity:0}}
+.pxeyes{animation:pxblink 4s infinite}
+@keyframes hi{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-3px) rotate(-4deg)}}
+.hi{animation:hi 2.4s ease-in-out infinite}
+.avatar svg{transition:transform .4s cubic-bezier(.3,1.6,.5,1)}
+.avatar:hover svg{transform:rotate(-8deg) scale(1.06)}
+@keyframes bounce{0%,100%{transform:translateY(0)}45%{transform:translateY(-14px)}55%{transform:translateY(-14px)}}
+.bounce{animation:bounce 1.6s cubic-bezier(.5,0,.5,1) infinite}
+@keyframes draw{0%{stroke-dashoffset:60}60%,100%{stroke-dashoffset:0}}
+.draw{stroke-dasharray:60;animation:draw 3s ease-out infinite}
+@keyframes twinkle{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.18) rotate(20deg)}}
+.twinkle{transform-box:fill-box;transform-origin:center;animation:twinkle 2.4s ease-in-out infinite}
+@keyframes feed{0%{opacity:0;transform:translateY(6px)}5%,27%{opacity:1;transform:none}32%,100%{opacity:0;transform:translateY(-6px)}}
+.f1,.f2,.f3{opacity:0;animation:feed 6s infinite both}.f2{animation-delay:2s}.f3{animation-delay:4s}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ring{animation:spin 14s linear infinite}
+@keyframes bubble{from{opacity:0;transform:translateY(10px) scale(.96)}to{opacity:1;transform:none}}
+.b1{animation:bubble .5s .2s both}.b2{animation:bubble .5s 1s both}.b3{animation:bubble .5s 1.8s both}
+.lift{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.lift:hover{transform:translateY(-6px);box-shadow:0 22px 50px rgba(17,12,46,.12)}
+.chip{transition:background .2s,color .2s,transform .2s}
+.chip:hover{background:#7c3aed !important;color:#fff !important;transform:translateY(-2px)}
+.card3{transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.fan:hover .c1{transform:rotate(-16deg) translateX(-28px)}
+.fan:hover .c3{transform:rotate(16deg) translateX(28px)}
+@keyframes scan{0%{transform:translateY(-100%)}100%{transform:translateY(400%)}}
+.scan{animation:scan 3.2s linear infinite}
+@supports (animation-timeline: view()){
+  @keyframes rise{from{opacity:0;transform:translateY(48px) scale(.98)}to{opacity:1;transform:none}}
+  .reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 0% cover 22%}
+}
+@supports (animation-timeline: view()){
+  @keyframes fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  .fillbar{transform-origin:0 50%;animation:fill linear both;animation-timeline:view();animation-range:entry 20% cover 45%}
+}
+@supports (animation-timeline: scroll()){
+  @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  .progress{animation:grow linear both;animation-timeline:scroll(root)}
+}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+@media (max-width: 620px){.wide{grid-column:auto !important}.tall{grid-row:auto !important}}
+</style>
+</head>
+<body>
+<div style="min-height: 100vh; background: #f5f5f7; color: #1d1d1f; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', Inter, 'Helvetica Neue', sans-serif; -webkit-font-smoothing: antialiased; letter-spacing: -0.011em; overflow-x: clip">
+
+  <div class="progress" aria-hidden="true" style="position: fixed; top: 0; left: 0; right: 0; height: 3px; background: #7c3aed; transform-origin: 0 50%; z-index: 20"></div>
+
+  <!-- NAV -->
+  <header style="position: sticky; top: 14px; z-index: 10; padding: 0 16px">
+    <nav style="position: relative; max-width: 700px; margin: 0 auto; padding: 6px 6px 6px 20px; border-radius: 980px; background: rgba(255,255,255,0.78); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); box-shadow: 0 1px 0 rgba(0,0,0,0.04), 0 8px 30px rgba(0,0,0,0.06); display: flex; align-items: center; justify-content: space-between; gap: 8px">
+      <a href="#top" data-close class="mono" style="color: #1d1d1f; font-weight: 600; font-size: 15px; white-space: nowrap">~/simone<span class="caret" style="color: #7c3aed">_</span></a>
+      <div class="navlinks" id="navlinks" style="align-items: center; gap: 18px; font-size: 13px; font-weight: 500">
+        <a href="#progetti" data-close class="navlink" style="color: #424245">Progetti</a>
+        <a href="#universita" data-close class="navlink" style="color: #424245">Università</a>
+        <a href="#stack" data-close class="navlink" style="color: #424245">Stack</a>
+        <a href="#interessi" data-close class="navlink" style="color: #424245">Interessi</a>
+        <a href="#storia" data-close class="navlink" style="color: #424245">Storia</a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 6px">
+        <a href="#contatti" data-close style="display: inline-flex; align-items: center; min-height: 36px; padding: 0 16px; border-radius: 980px; background: #1d1d1f; color: #ffffff; font-size: 13px; font-weight: 500; white-space: nowrap">Scrivimi</a>
+        <button type="button" class="burger" id="burger" aria-label="Apri menu" aria-expanded="false" aria-controls="navlinks" style="width: 40px; height: 40px; border: 0; border-radius: 50%; background: #f5f5f7; cursor: pointer; align-items: center; justify-content: center; padding: 0">
+          <span aria-hidden="true" style="position: relative; display: block; width: 16px; height: 12px">
+            <span class="bl b-top" style="position: absolute; left: 0; top: 0; width: 16px; height: 2px; border-radius: 2px; background: #1d1d1f"></span>
+            <span class="bl b-mid" style="position: absolute; left: 0; top: 5px; width: 16px; height: 2px; border-radius: 2px; background: #1d1d1f"></span>
+            <span class="bl b-bot" style="position: absolute; left: 0; top: 10px; width: 16px; height: 2px; border-radius: 2px; background: #1d1d1f"></span>
+          </span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section style="position: relative; max-width: 1120px; margin: 0 auto; padding: 110px 22px 80px">
+      <div aria-hidden="true" class="mono" style="color: #c4b5fd; font-size: 28px; font-weight: 600">
+        <span class="glyph" style="top: 70px; left: 4%">{ }</span>
+        <span class="glyph" style="top: 210px; right: 6%; animation-delay: -2s">&lt;/&gt;</span>
+        <span class="glyph" style="top: 460px; left: 1%; animation-delay: -4s; font-size: 20px">=&gt;</span>
+        <span class="glyph" style="top: 40px; right: 26%; animation-delay: -1s; font-size: 18px">0x1F</span>
+        <span class="glyph" style="bottom: 40px; right: 2%; animation-delay: -3s; font-size: 22px">;</span>
+      </div>
+      <div style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 56px; align-items: center">
+        <div style="display: flex; flex-direction: column; gap: 24px">
+          <div style="display: flex; align-items: center; gap: 16px">
+            <div class="avatar" style="position: relative; width: 96px; height: 96px">
+              <div class="ring" aria-hidden="true" style="position: absolute; inset: -7px; border-radius: 50%; border: 2px dashed #7c3aed"></div>
+              <svg role="img" aria-label="Avatar pixel art di Simone" viewBox="-4 -8 24 24" width="96" height="96" shape-rendering="crispEdges" style="display: block; border-radius: 50%; background: #ede9fe; box-shadow: 0 0 0 3px #ffffff, 0 12px 30px rgba(124,58,237,0.25)"><g class="sprite"><rect x="4" y="0" width="1" height="1" fill="#2b1d16"></rect><rect x="5" y="0" width="1" height="1" fill="#2b1d16"></rect><rect x="6" y="0" width="1" height="1" fill="#5a4033"></rect><rect x="7" y="0" width="1" height="1" fill="#2b1d16"></rect><rect x="8" y="0" width="1" height="1" fill="#2b1d16"></rect><rect x="9" y="0" width="1" height="1" fill="#5a4033"></rect><rect x="10" y="0" width="1" height="1" fill="#2b1d16"></rect><rect x="11" y="0" width="1" height="1" fill="#2b1d16"></rect><rect x="3" y="1" width="1" height="1" fill="#2b1d16"></rect><rect x="4" y="1" width="1" height="1" fill="#5a4033"></rect><rect x="5" y="1" width="1" height="1" fill="#2b1d16"></rect><rect x="6" y="1" width="1" height="1" fill="#2b1d16"></rect><rect x="7" y="1" width="1" height="1" fill="#2b1d16"></rect><rect x="8" y="1" width="1" height="1" fill="#2b1d16"></rect><rect x="9" y="1" width="1" height="1" fill="#2b1d16"></rect><rect x="10" y="1" width="1" height="1" fill="#2b1d16"></rect><rect x="11" y="1" width="1" height="1" fill="#5a4033"></rect><rect x="12" y="1" width="1" height="1" fill="#2b1d16"></rect><rect x="2" y="2" width="1" height="1" fill="#2b1d16"></rect><rect x="3" y="2" width="1" height="1" fill="#2b1d16"></rect><rect x="4" y="2" width="1" height="1" fill="#2b1d16"></rect><rect x="5" y="2" width="1" height="1" fill="#2b1d16"></rect><rect x="6" y="2" width="1" height="1" fill="#5a4033"></rect><rect x="7" y="2" width="1" height="1" fill="#2b1d16"></rect><rect x="8" y="2" width="1" height="1" fill="#2b1d16"></rect><rect x="9" y="2" width="1" height="1" fill="#2b1d16"></rect><rect x="10" y="2" width="1" height="1" fill="#2b1d16"></rect><rect x="11" y="2" width="1" height="1" fill="#2b1d16"></rect><rect x="12" y="2" width="1" height="1" fill="#2b1d16"></rect><rect x="13" y="2" width="1" height="1" fill="#2b1d16"></rect><rect x="2" y="3" width="1" height="1" fill="#2b1d16"></rect><rect x="3" y="3" width="1" height="1" fill="#5a4033"></rect><rect x="4" y="3" width="1" height="1" fill="#2b1d16"></rect><rect x="5" y="3" width="1" height="1" fill="#2b1d16"></rect><rect x="6" y="3" width="1" height="1" fill="#2b1d16"></rect><rect x="7" y="3" width="1" height="1" fill="#2b1d16"></rect><rect x="8" y="3" width="1" height="1" fill="#2b1d16"></rect><rect x="9" y="3" width="1" height="1" fill="#2b1d16"></rect><rect x="10" y="3" width="1" height="1" fill="#5a4033"></rect><rect x="11" y="3" width="1" height="1" fill="#2b1d16"></rect><rect x="12" y="3" width="1" height="1" fill="#2b1d16"></rect><rect x="13" y="3" width="1" height="1" fill="#2b1d16"></rect><rect x="2" y="4" width="1" height="1" fill="#2b1d16"></rect><rect x="3" y="4" width="1" height="1" fill="#2b1d16"></rect><rect x="4" y="4" width="1" height="1" fill="#ecb892"></rect><rect x="5" y="4" width="1" height="1" fill="#2b1d16"></rect><rect x="6" y="4" width="1" height="1" fill="#2b1d16"></rect><rect x="7" y="4" width="1" height="1" fill="#ecb892"></rect><rect x="8" y="4" width="1" height="1" fill="#ecb892"></rect><rect x="9" y="4" width="1" height="1" fill="#2b1d16"></rect><rect x="10" y="4" width="1" height="1" fill="#2b1d16"></rect><rect x="11" y="4" width="1" height="1" fill="#ecb892"></rect><rect x="12" y="4" width="1" height="1" fill="#2b1d16"></rect><rect x="13" y="4" width="1" height="1" fill="#2b1d16"></rect><rect x="2" y="5" width="1" height="1" fill="#2b1d16"></rect><rect x="3" y="5" width="1" height="1" fill="#ecb892"></rect><rect x="4" y="5" width="1" height="1" fill="#ecb892"></rect><rect x="5" y="5" width="1" height="1" fill="#ecb892"></rect><rect x="6" y="5" width="1" height="1" fill="#ecb892"></rect><rect x="7" y="5" width="1" height="1" fill="#ecb892"></rect><rect x="8" y="5" width="1" height="1" fill="#ecb892"></rect><rect x="9" y="5" width="1" height="1" fill="#ecb892"></rect><rect x="10" y="5" width="1" height="1" fill="#ecb892"></rect><rect x="11" y="5" width="1" height="1" fill="#ecb892"></rect><rect x="12" y="5" width="1" height="1" fill="#ecb892"></rect><rect x="13" y="5" width="1" height="1" fill="#2b1d16"></rect><rect x="2" y="6" width="1" height="1" fill="#d29b74"></rect><rect x="3" y="6" width="1" height="1" fill="#ecb892"></rect><rect x="4" y="6" width="1" height="1" fill="#2b1d16"></rect><rect x="5" y="6" width="1" height="1" fill="#2b1d16"></rect><rect x="6" y="6" width="1" height="1" fill="#ecb892"></rect><rect x="7" y="6" width="1" height="1" fill="#ecb892"></rect><rect x="8" y="6" width="1" height="1" fill="#ecb892"></rect><rect x="9" y="6" width="1" height="1" fill="#ecb892"></rect><rect x="10" y="6" width="1" height="1" fill="#2b1d16"></rect><rect x="11" y="6" width="1" height="1" fill="#2b1d16"></rect><rect x="12" y="6" width="1" height="1" fill="#ecb892"></rect><rect x="13" y="6" width="1" height="1" fill="#d29b74"></rect><rect x="2" y="7" width="1" height="1" fill="#d29b74"></rect><rect x="3" y="7" width="1" height="1" fill="#ecb892"></rect><rect x="4" y="7" width="1" height="1" fill="#ecb892"></rect><rect x="5" y="7" width="1" height="1" fill="#ecb892"></rect><rect x="6" y="7" width="1" height="1" fill="#ecb892"></rect><rect x="7" y="7" width="1" height="1" fill="#ecb892"></rect><rect x="8" y="7" width="1" height="1" fill="#ecb892"></rect><rect x="9" y="7" width="1" height="1" fill="#ecb892"></rect><rect x="10" y="7" width="1" height="1" fill="#ecb892"></rect><rect x="11" y="7" width="1" height="1" fill="#ecb892"></rect><rect x="12" y="7" width="1" height="1" fill="#ecb892"></rect><rect x="13" y="7" width="1" height="1" fill="#d29b74"></rect><rect x="2" y="8" width="1" height="1" fill="#d29b74"></rect><rect x="3" y="8" width="1" height="1" fill="#ecb892"></rect><rect x="4" y="8" width="1" height="1" fill="#ecb892"></rect><rect x="5" y="8" width="1" height="1" fill="#ecb892"></rect><rect x="6" y="8" width="1" height="1" fill="#ecb892"></rect><rect x="7" y="8" width="1" height="1" fill="#ecb892"></rect><rect x="8" y="8" width="1" height="1" fill="#ecb892"></rect><rect x="9" y="8" width="1" height="1" fill="#ecb892"></rect><rect x="10" y="8" width="1" height="1" fill="#ecb892"></rect><rect x="11" y="8" width="1" height="1" fill="#ecb892"></rect><rect x="12" y="8" width="1" height="1" fill="#ecb892"></rect><rect x="13" y="8" width="1" height="1" fill="#d29b74"></rect><rect x="2" y="9" width="1" height="1" fill="#d29b74"></rect><rect x="3" y="9" width="1" height="1" fill="#f2a0a0"></rect><rect x="4" y="9" width="1" height="1" fill="#ecb892"></rect><rect x="5" y="9" width="1" height="1" fill="#ecb892"></rect><rect x="6" y="9" width="1" height="1" fill="#ecb892"></rect><rect x="7" y="9" width="1" height="1" fill="#d29b74"></rect><rect x="8" y="9" width="1" height="1" fill="#d29b74"></rect><rect x="9" y="9" width="1" height="1" fill="#ecb892"></rect><rect x="10" y="9" width="1" height="1" fill="#ecb892"></rect><rect x="11" y="9" width="1" height="1" fill="#ecb892"></rect><rect x="12" y="9" width="1" height="1" fill="#f2a0a0"></rect><rect x="13" y="9" width="1" height="1" fill="#d29b74"></rect><rect x="3" y="10" width="1" height="1" fill="#ecb892"></rect><rect x="4" y="10" width="1" height="1" fill="#ecb892"></rect><rect x="5" y="10" width="1" height="1" fill="#ecb892"></rect><rect x="6" y="10" width="1" height="1" fill="#8a3f30"></rect><rect x="7" y="10" width="1" height="1" fill="#ecb892"></rect><rect x="8" y="10" width="1" height="1" fill="#ecb892"></rect><rect x="9" y="10" width="1" height="1" fill="#8a3f30"></rect><rect x="10" y="10" width="1" height="1" fill="#ecb892"></rect><rect x="11" y="10" width="1" height="1" fill="#ecb892"></rect><rect x="12" y="10" width="1" height="1" fill="#ecb892"></rect><rect x="4" y="11" width="1" height="1" fill="#ecb892"></rect><rect x="5" y="11" width="1" height="1" fill="#ecb892"></rect><rect x="6" y="11" width="1" height="1" fill="#ecb892"></rect><rect x="7" y="11" width="1" height="1" fill="#8a3f30"></rect><rect x="8" y="11" width="1" height="1" fill="#8a3f30"></rect><rect x="9" y="11" width="1" height="1" fill="#ecb892"></rect><rect x="10" y="11" width="1" height="1" fill="#ecb892"></rect><rect x="11" y="11" width="1" height="1" fill="#ecb892"></rect><rect x="6" y="12" width="1" height="1" fill="#d29b74"></rect><rect x="7" y="12" width="1" height="1" fill="#d29b74"></rect><rect x="8" y="12" width="1" height="1" fill="#d29b74"></rect><rect x="9" y="12" width="1" height="1" fill="#d29b74"></rect><rect x="3" y="13" width="1" height="1" fill="#1d1d1f"></rect><rect x="4" y="13" width="1" height="1" fill="#1d1d1f"></rect><rect x="5" y="13" width="1" height="1" fill="#1d1d1f"></rect><rect x="6" y="13" width="1" height="1" fill="#3a3a3c"></rect><rect x="7" y="13" width="1" height="1" fill="#d29b74"></rect><rect x="8" y="13" width="1" height="1" fill="#d29b74"></rect><rect x="9" y="13" width="1" height="1" fill="#3a3a3c"></rect><rect x="10" y="13" width="1" height="1" fill="#1d1d1f"></rect><rect x="11" y="13" width="1" height="1" fill="#1d1d1f"></rect><rect x="12" y="13" width="1" height="1" fill="#1d1d1f"></rect><rect x="1" y="14" width="1" height="1" fill="#1d1d1f"></rect><rect x="2" y="14" width="1" height="1" fill="#1d1d1f"></rect><rect x="3" y="14" width="1" height="1" fill="#1d1d1f"></rect><rect x="4" y="14" width="1" height="1" fill="#1d1d1f"></rect><rect x="5" y="14" width="1" height="1" fill="#1d1d1f"></rect><rect x="6" y="14" width="1" height="1" fill="#1d1d1f"></rect><rect x="7" y="14" width="1" height="1" fill="#e5e5ea"></rect><rect x="8" y="14" width="1" height="1" fill="#1d1d1f"></rect><rect x="9" y="14" width="1" height="1" fill="#1d1d1f"></rect><rect x="10" y="14" width="1" height="1" fill="#e5e5ea"></rect><rect x="11" y="14" width="1" height="1" fill="#1d1d1f"></rect><rect x="12" y="14" width="1" height="1" fill="#1d1d1f"></rect><rect x="13" y="14" width="1" height="1" fill="#1d1d1f"></rect><rect x="14" y="14" width="1" height="1" fill="#1d1d1f"></rect><rect x="0" y="15" width="1" height="1" fill="#1d1d1f"></rect><rect x="1" y="15" width="1" height="1" fill="#1d1d1f"></rect><rect x="2" y="15" width="1" height="1" fill="#1d1d1f"></rect><rect x="3" y="15" width="1" height="1" fill="#1d1d1f"></rect><rect x="4" y="15" width="1" height="1" fill="#1d1d1f"></rect><rect x="5" y="15" width="1" height="1" fill="#1d1d1f"></rect><rect x="6" y="15" width="1" height="1" fill="#1d1d1f"></rect><rect x="7" y="15" width="1" height="1" fill="#e5e5ea"></rect><rect x="8" y="15" width="1" height="1" fill="#1d1d1f"></rect><rect x="9" y="15" width="1" height="1" fill="#1d1d1f"></rect><rect x="10" y="15" width="1" height="1" fill="#e5e5ea"></rect><rect x="11" y="15" width="1" height="1" fill="#1d1d1f"></rect><rect x="12" y="15" width="1" height="1" fill="#1d1d1f"></rect><rect x="13" y="15" width="1" height="1" fill="#1d1d1f"></rect><rect x="14" y="15" width="1" height="1" fill="#1d1d1f"></rect><rect x="15" y="15" width="1" height="1" fill="#1d1d1f"></rect><rect x="4" y="8" width="2" height="1" fill="#2b1d16"></rect><rect x="10" y="8" width="2" height="1" fill="#2b1d16"></rect><g class="pxeyes"><rect x="4" y="7" width="1" height="1" fill="#1d1d1f"></rect><rect x="5" y="7" width="1" height="1" fill="#ffffff"></rect><rect x="10" y="7" width="1" height="1" fill="#1d1d1f"></rect><rect x="11" y="7" width="1" height="1" fill="#ffffff"></rect><rect x="4" y="8" width="1" height="1" fill="#1d1d1f"></rect><rect x="5" y="8" width="1" height="1" fill="#1d1d1f"></rect><rect x="10" y="8" width="1" height="1" fill="#1d1d1f"></rect><rect x="11" y="8" width="1" height="1" fill="#1d1d1f"></rect></g></g></svg>
+            </div>
+            <p style="margin: 0; display: flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 980px; background: #ffffff; font-size: 13px; font-weight: 600; color: #1d1d1f"><span class="live" style="width: 8px; height: 8px; border-radius: 50%; background: #30d158; display: inline-block"></span>Open to work · Fiumicino (RM)</p>
+          </div>
+          <h1 style="margin: 0; font-size: clamp(56px, 9vw, 108px); line-height: 0.95; font-weight: 800; letter-spacing: -0.055em"><span class="mono" style="font-weight: 600; letter-spacing: -0.04em; color: #7c3aed" id="scramble">Simone</span><br>Vergari.</h1>
+          <p style="margin: 0; max-width: 520px; font-size: clamp(20px, 2.4vw, 26px); line-height: 1.3; font-weight: 500; letter-spacing: -0.02em; color: #6e6e73">Junior software developer. Scrivo <span style="color: #1d1d1f">API in Go</span>, interfacce in <span style="color: #1d1d1f">Vue.js</span> e mi laureo in Informatica alla <span style="color: #1d1d1f">Sapienza</span> a dicembre 2026.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 4px">
+            <a href="#progetti" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 26px; border-radius: 980px; background: #7c3aed; color: #ffffff; font-size: 17px; font-weight: 600">Vedi i progetti</a>
+            <a href="https://github.com/VergariSimone" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 24px; border-radius: 980px; background: #ffffff; color: #1d1d1f; font-size: 17px; font-weight: 600; box-shadow: inset 0 0 0 1px #d2d2d7">
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"></path></svg>
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/simone-vergari-77041a218/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 24px; border-radius: 980px; background: #ffffff; color: #1d1d1f; font-size: 17px; font-weight: 600; box-shadow: inset 0 0 0 1px #d2d2d7">LinkedIn</a>
+            <a href="Simone_Vergari_CV.pdf" download="Simone_Vergari_CV.pdf" style="display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 24px; border-radius: 980px; background: #ffffff; color: #1d1d1f; font-size: 17px; font-weight: 600; box-shadow: inset 0 0 0 1px #d2d2d7">
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"></path><path d="M7 10l5 5 5-5"></path><path d="M5 20h14"></path></svg>
+              CV
+            </a>
+          </div>
+        </div>
+
+        <!-- Terminale animato -->
+        <div class="lift" style="border-radius: 22px; background: #16161a; box-shadow: 0 30px 80px rgba(76,29,149,0.25); overflow: hidden">
+          <div style="display: flex; align-items: center; gap: 8px; padding: 14px 18px; background: #222228">
+            <span style="width: 12px; height: 12px; border-radius: 50%; background: #ff5f57"></span>
+            <span style="width: 12px; height: 12px; border-radius: 50%; background: #febc2e"></span>
+            <span style="width: 12px; height: 12px; border-radius: 50%; background: #28c840"></span>
+            <span class="mono" style="flex: 1; text-align: center; font-size: 12px; color: #a1a1a6">simone@sapienza: ~</span>
+          </div>
+          <div class="mono" style="min-height: 360px; padding: 22px 22px 26px; font-size: 14px; line-height: 1.7; color: #e5e5ea">
+            <div id="termlines"></div>
+            <div><span style="color: #a78bfa">❯</span> <span id="termcur"></span><span class="caret" style="display: inline-block; width: 8px; height: 17px; margin-left: 2px; vertical-align: -3px; background: #a78bfa"></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENTO -->
+    <section aria-label="In breve" style="max-width: 1120px; margin: 0 auto; padding: 24px 22px 120px">
+      <div class="reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
+        <div class="wide lift" style="grid-column: span 2; min-width: 0; padding: 36px; border-radius: 30px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between; gap: 24px">
+          <p class="mono" style="margin: 0; font-size: 13px; font-weight: 600; color: #7c3aed">// su di me</p>
+          <p style="margin: 0; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.2; font-weight: 700; letter-spacing: -0.03em">24 anni, laureando in Informatica e alla prima esperienza nel software. <span style="color: #86868b">Dallo sport ho preso disciplina e gioco di squadra: li porto nel codice.</span></p>
+        </div>
+        <div class="lift" style="padding: 28px; border-radius: 30px; background: #7c3aed; color: #ffffff; display: flex; flex-direction: column; justify-content: space-between; gap: 18px">
+          <p style="margin: 0; font-size: 64px; line-height: 1; font-weight: 800; letter-spacing: -0.05em">3</p>
+          <p style="margin: 0; font-size: 15px; font-weight: 500; color: #ede9fe">progetti accademici tra web full-stack, giochi e sicurezza</p>
+        </div>
+        <div class="lift" style="padding: 28px; border-radius: 30px; background: #1d1d1f; color: #f5f5f7; display: flex; flex-direction: column; justify-content: space-between; gap: 18px">
+          <p class="mono" style="margin: 0; font-size: 13px; font-weight: 600; color: #c4b5fd">build: <span style="color: #30d158">passing ✓</span></p>
+          <p style="margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -0.02em">Laurea triennale prevista a dicembre 2026</p>
+        </div>
+        <div class="lift" style="padding: 28px; border-radius: 30px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between; gap: 18px">
+          <p style="margin: 0; font-size: 64px; line-height: 1; font-weight: 800; letter-spacing: -0.05em">7<span style="color: #7c3aed">+</span></p>
+          <p style="margin: 0; font-size: 15px; color: #6e6e73">stagioni estive di lavoro a contatto con i clienti</p>
+        </div>
+        <div class="lift" style="padding: 28px; border-radius: 30px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between; gap: 18px">
+          <p style="margin: 0; font-size: 64px; line-height: 1; font-weight: 800; letter-spacing: -0.05em">90<span style="font-size: 28px; color: #86868b">/100</span></p>
+          <p style="margin: 0; font-size: 15px; color: #6e6e73">diploma in Informatica e Telecomunicazioni</p>
+        </div>
+        <div class="lift" style="padding: 28px; border-radius: 30px; background: #ffffff; display: flex; flex-direction: column; gap: 14px">
+          <p class="mono" style="margin: 0; font-size: 13px; font-weight: 600; color: #7c3aed">// lingue</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px">
+            <span style="padding: 8px 14px; border-radius: 980px; background: #f5f5f7; font-size: 14px; font-weight: 500">Italiano · madrelingua</span>
+            <span style="padding: 8px 14px; border-radius: 980px; background: #f5f5f7; font-size: 14px; font-weight: 500">Inglese · B2</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGETTI -->
+    <section id="progetti" style="padding: 0 22px 120px">
+      <div style="max-width: 1120px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px">
+        <h2 class="reveal" style="margin: 0 0 24px; font-size: clamp(40px, 6vw, 72px); line-height: 1; font-weight: 800; letter-spacing: -0.05em">Progetti. <span style="color: #86868b">Nati all'università, scritti sul serio.</span></h2>
+        <p class="reveal" style="margin: -24px 0 24px; max-width: 640px; font-size: 17px; line-height: 1.5; color: #6e6e73"><span class="mono" style="padding: 4px 10px; border-radius: 8px; background: #ede9fe; color: #5b21b6; font-size: 13px; font-weight: 600">@academic</span>&nbsp; Sono progetti accademici, realizzati durante gli studi per mettere in pratica quello che imparavo.</p>
+
+        <!-- WASAText -->
+        <article class="reveal" style="border-radius: 36px; background: #1d1d1f; color: #f5f5f7; overflow: hidden; display: flex; flex-wrap: wrap">
+          <div style="flex: 1 1 380px; min-width: 0; padding: clamp(32px, 5vw, 64px); display: flex; flex-direction: column; justify-content: center; gap: 16px">
+            <p class="mono" style="margin: 0; font-size: 13px; font-weight: 600; color: #c4b5fd">01 · progetto accademico · web full-stack</p>
+            <h3 style="margin: 0; font-size: clamp(40px, 5vw, 60px); line-height: 1; font-weight: 800; letter-spacing: -0.045em">WASAText</h3>
+            <p style="margin: 0; font-size: 18px; line-height: 1.5; color: #a1a1a6">App di messaggistica completa: chat singole e di gruppo, immagini, risposte, inoltri, reazioni e conferme di lettura. API REST in Go con SQLite, frontend Vue.js, tutto containerizzato con Docker Compose.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px">
+              <span class="mono" style="padding: 6px 12px; border-radius: 980px; background: rgba(255,255,255,0.08); font-size: 12px; color: #e5e5ea">Go</span>
+              <span class="mono" style="padding: 6px 12px; border-radius: 980px; background: rgba(255,255,255,0.08); font-size: 12px; color: #e5e5ea">Vue.js</span>
+              <span class="mono" style="padding: 6px 12px; border-radius: 980px; background: rgba(255,255,255,0.08); font-size: 12px; color: #e5e5ea">Docker</span>
+              <span class="mono" style="padding: 6px 12px; border-radius: 980px; background: rgba(255,255,255,0.08); font-size: 12px; color: #e5e5ea">OpenAPI</span>
+              <span class="mono" style="padding: 6px 12px; border-radius: 980px; background: rgba(255,255,255,0.08); font-size: 12px; color: #e5e5ea">SQLite</span>
+            </div>
+            <a href="https://github.com/VergariSimone/WASAText" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; font-size: 17px; font-weight: 600; color: #c4b5fd">Codice su GitHub ↗</a>
+          </div>
+          <div aria-hidden="true" style="flex: 1 1 380px; min-height: 380px; padding: 40px; background: radial-gradient(80% 80% at 60% 40%, #4c1d95, #1d1d1f 72%); display: flex; flex-direction: column; justify-content: center; gap: 12px">
+            <div class="b1" style="align-self: flex-start; max-width: 70%; padding: 12px 16px; border-radius: 20px 20px 20px 6px; background: #3a3a3c; font-size: 15px">Hai fatto il deploy?</div>
+            <div class="b2" style="align-self: flex-end; max-width: 70%; padding: 12px 16px; border-radius: 20px 20px 6px 20px; background: #7c3aed; color: #ffffff; font-size: 15px">docker compose up -d ✓</div>
+            <div class="b3 mono" style="align-self: flex-end; display: flex; align-items: center; gap: 6px; font-size: 12px; color: #a1a1a6">letto ✓✓ <span style="padding: 2px 8px; border-radius: 980px; background: #3a3a3c; color: #e5e5ea">+2</span></div>
+          </div>
+        </article>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px">
+          <!-- JTresette -->
+          <article class="reveal lift fan" style="min-width: 0; border-radius: 36px; background: #ffffff; overflow: hidden; display: flex; flex-direction: column">
+            <div aria-hidden="true" style="height: 240px; background: linear-gradient(160deg, #f5f3ff, #ede9fe); display: flex; align-items: center; justify-content: center; position: relative">
+              <div class="card3 c1" style="position: absolute; width: 96px; height: 136px; border-radius: 12px; background: #ffffff; box-shadow: 0 10px 30px rgba(76,29,149,0.18); transform: rotate(-8deg) translateX(-14px); display: flex; align-items: center; justify-content: center; font-size: 34px; font-weight: 800; color: #1d1d1f">3</div>
+              <div class="card3" style="position: absolute; width: 96px; height: 136px; border-radius: 12px; background: #ffffff; box-shadow: 0 10px 30px rgba(76,29,149,0.18); display: flex; align-items: center; justify-content: center; font-size: 34px; font-weight: 800; color: #7c3aed">2</div>
+              <div class="card3 c3" style="position: absolute; width: 96px; height: 136px; border-radius: 12px; background: #1d1d1f; box-shadow: 0 10px 30px rgba(76,29,149,0.18); transform: rotate(8deg) translateX(14px); display: flex; align-items: center; justify-content: center; font-size: 34px; font-weight: 800; color: #ffffff">A</div>
+            </div>
+            <div style="padding: 32px; display: flex; flex-direction: column; gap: 12px">
+              <p class="mono" style="margin: 0; font-size: 13px; font-weight: 600; color: #7c3aed">02 · progetto accademico · game dev</p>
+              <h3 style="margin: 0; font-size: 34px; font-weight: 800; letter-spacing: -0.04em">JTresette</h3>
+              <p style="margin: 0; font-size: 17px; line-height: 1.5; color: #6e6e73">Il Tressette contro un'IA avversaria. Pattern MVC e Observer, interfaccia con animazioni e audio, documentazione con UML e Javadoc.</p>
+              <p class="mono" style="margin: 0; font-size: 13px; color: #6e6e73">Java · Swing</p>
+              <a href="https://github.com/VergariSimone/JTresette" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; font-size: 17px; font-weight: 600; color: #7c3aed">Codice su GitHub ↗</a>
+            </div>
+          </article>
+
+          <!-- SQL Injection -->
+          <article class="reveal lift" style="min-width: 0; border-radius: 36px; background: #ffffff; overflow: hidden; display: flex; flex-direction: column">
+            <div aria-hidden="true" class="mono" style="position: relative; height: 240px; padding: 28px; box-sizing: border-box; background: #16161a; overflow: hidden; display: flex; flex-direction: column; justify-content: center; gap: 10px; font-size: 13px">
+              <div class="scan" style="position: absolute; left: 0; right: 0; top: 0; height: 60px; background: linear-gradient(180deg, rgba(167,139,250,0), rgba(167,139,250,0.14), rgba(167,139,250,0))"></div>
+              <div style="color: #8e8e93">POST /login</div>
+              <div style="color: #e5e5ea">user = <span style="color: #ff6961">admin' OR '1'='1</span></div>
+              <div style="color: #e5e5ea">stmt = <span style="color: #a78bfa">prepare</span>(<span style="color: #febc2e">"…WHERE u = ?"</span>)</div>
+              <div style="color: #30d158">✓ attacco bloccato</div>
+            </div>
+            <div style="padding: 32px; display: flex; flex-direction: column; gap: 12px">
+              <p class="mono" style="margin: 0; font-size: 13px; font-weight: 600; color: #7c3aed">03 · progetto accademico · security</p>
+              <h3 style="margin: 0; font-size: 34px; font-weight: 800; letter-spacing: -0.04em">SQL Injection Lab</h3>
+              <p style="margin: 0; font-size: 17px; line-height: 1.5; color: #6e6e73">Una web app di login in Docker, realizzata a livello accademico per studiare gli attacchi SQL Injection e implementare le contromisure in PHP e SQL.</p>
+              <p class="mono" style="margin: 0; font-size: 13px; color: #6e6e73">PHP · MySQL · Docker</p>
+              <a href="https://github.com/VergariSimone/Progetto_Sicurezza" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; font-size: 17px; font-weight: 600; color: #7c3aed">Codice su GitHub ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- UNIVERSITA -->
+    <section id="universita" style="max-width: 1120px; margin: 0 auto; padding: 0 22px 120px; display: flex; flex-direction: column; gap: 40px">
+      <div class="reveal" style="display: flex; flex-direction: column; gap: 16px">
+        <h2 style="margin: 0; font-size: clamp(40px, 6vw, 72px); line-height: 1; font-weight: 800; letter-spacing: -0.05em">Università. <span style="color: #86868b">Tre anni di Informatica alla Sapienza.</span></h2>
+        <p style="margin: 0; max-width: 680px; font-size: 19px; line-height: 1.5; color: #6e6e73">Dalle basi matematiche alla progettazione di software completo, fino a sicurezza, esperienza utente e impresa digitale.</p>
+        <div class="mono" style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; font-size: 13px; color: #6e6e73">
+          <span>laurea.compile()</span>
+          <span aria-hidden="true" style="flex: 0 1 260px; height: 8px; border-radius: 980px; background: #e8e8ed; overflow: hidden"><span class="fillbar" style="display: block; height: 100%; width: 92%; border-radius: 980px; background: #7c3aed"></span></span>
+          <span style="color: #1d1d1f; font-weight: 600">92% · release dic 2026</span>
+        </div>
+      </div>
+      <div class="reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px">
+        <article class="lift" style="min-width: 0; padding: 32px; border-radius: 30px; background: #ffffff; display: flex; flex-direction: column; gap: 14px">
+          <p class="mono" style="margin: 0; font-size: 12px; color: #6e6e73"><span style="color: #7c3aed">anno_1/</span> · primo anno</p>
+          <h3 style="margin: 0; font-size: 26px; font-weight: 800; letter-spacing: -0.03em">Le fondamenta</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.5; color: #6e6e73">Dal saper scrivere codice al capire cosa succede sotto il cofano, dal circuito digitale al processore.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; padding-top: 4px">
+            <span style="padding: 7px 13px; border-radius: 980px; background: #f5f5f7; font-size: 14px; font-weight: 500">Programmazione</span>
+            <span style="padding: 7px 13px; border-radius: 980px; background: #f5f5f7; font-size: 14px; font-weight: 500">OOP e design pattern</span>
+            <span style="padding: 7px 13px; border-radius: 980px; background: #f5f5f7; font-size: 14px; font-weight: 500">Architettura dei calcolatori</span>
+            <span style="padding: 7px 13px; border-radius: 980px; background: #f5f5f7; font-size: 14px; font-weight: 500">Algoritmi</span>
+            <span style="padding: 7px 13px; border-radius: 980px; background: #f5f5f7; font-size: 14px; font-weight: 500">Logica e analisi</span>
+          </div>
+        </article>
+        <article class="lift" style="min-width: 0; padding: 32px; border-radius: 30px; background: #ffffff; display: flex; flex-direction: column; gap: 14px">
+          <p class="mono" style="margin: 0; font-size: 12px; color: #6e6e73"><span style="color: #7c3aed">anno_2/</span> · secondo anno</p>
+          <h3 style="margin: 0; font-size: 26px; font-weight: 800; letter-spacing: -0.03em">I sistemi veri</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.5; color: #6e6e73">I sistemi che fanno girare il mondo: dal sistema operativo alla rete, fino ai database.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; padding-top: 4px">
+            <span style="padding: 7px 13px; border-radius: 980px; background: #f5f5f7; font-size: 14px; font-weight: 500">Sistemi operativi</span>
+            <span style="padding: 7px 13px; border-radius: 980px; background: #f5f5f7; font-size: 14px; font-weight: 500">Reti</span>
+            <span style="padding: 7px 13px; border-radius: 980px; background: #f5f5f7; font-size: 14px; font-weight: 500">Basi di dati</span>
+            <span style="padding: 7px 13px; border-radius: 980px; background: #f5f5f7; font-size: 14px; font-weight: 500">Progettazione di algoritmi</span>
+            <span style="padding: 7px 13px; border-radius: 980px; background: #f5f5f7; font-size: 14px; font-weight: 500">Matematica per i dati</span>
+          </div>
+        </article>
+        <article class="lift" style="min-width: 0; padding: 32px; border-radius: 30px; background: #ffffff; display: flex; flex-direction: column; gap: 14px">
+          <p class="mono" style="margin: 0; font-size: 12px; color: #6e6e73"><span style="color: #7c3aed">anno_3/</span> · terzo anno</p>
+          <h3 style="margin: 0; font-size: 26px; font-weight: 800; letter-spacing: -0.03em">Progettare per le persone</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.5; color: #6e6e73">La teoria incontra la pratica professionale, con un percorso orientato al prodotto.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; padding-top: 4px">
+            <span style="padding: 7px 13px; border-radius: 980px; background: #f5f5f7; font-size: 14px; font-weight: 500">Ingegneria del software</span>
+            <span style="padding: 7px 13px; border-radius: 980px; background: #f5f5f7; font-size: 14px; font-weight: 500">Programmazione web</span>
+            <span style="padding: 7px 13px; border-radius: 980px; background: #f5f5f7; font-size: 14px; font-weight: 500">Interazione uomo-macchina</span>
+            <span style="padding: 7px 13px; border-radius: 980px; background: #f5f5f7; font-size: 14px; font-weight: 500">Sicurezza</span>
+            <span style="padding: 7px 13px; border-radius: 980px; background: #f5f5f7; font-size: 14px; font-weight: 500">Game design</span>
+            <span style="padding: 7px 13px; border-radius: 980px; background: #f5f5f7; font-size: 14px; font-weight: 500">Startup e business plan</span>
+            <span style="padding: 7px 13px; border-radius: 980px; background: #f5f5f7; font-size: 14px; font-weight: 500">Calcolabilità e complessità</span>
+          </div>
+        </article>
+      </div>
+      <article class="reveal lift" style="border-radius: 30px; background: #16161a; color: #f5f5f7; overflow: hidden; display: flex; flex-wrap: wrap">
+        <div style="flex: 1 1 420px; min-width: 0; padding: clamp(28px, 4vw, 44px); display: flex; flex-direction: column; gap: 14px">
+          <p class="mono" style="margin: 0; font-size: 12px; color: #a78bfa">tirocinio interno + tesi · <span style="color: #febc2e">in corso</span></p>
+          <h3 style="margin: 0; font-size: clamp(24px, 2.6vw, 30px); line-height: 1.15; font-weight: 800; letter-spacing: -0.03em">L'ultimo sprint: un framework Human-in-the-Loop</h3>
+          <p style="margin: 0; font-size: 15px; font-weight: 500; color: #d2d2d7">Progettazione e implementazione di un framework Human-in-the-Loop per l'estrazione di dati strutturati dal web</p>
+          <p style="margin: 0; font-size: 16px; line-height: 1.5; color: #a1a1a6">Un'estensione per Chrome che usa euristiche basate sul DOM per aiutare i crowdworker ad annotare le pagine web ed esportare dataset JSON puliti. Tirocinio interno di sei mesi, svolto con un professore della Sapienza, che diventa la mia tesi di laurea.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; padding-top: 4px"><span class="mono" style="padding: 6px 12px; border-radius: 980px; background: rgba(255,255,255,0.08); font-size: 12px; color: #e5e5ea">JavaScript</span><span class="mono" style="padding: 6px 12px; border-radius: 980px; background: rgba(255,255,255,0.08); font-size: 12px; color: #e5e5ea">HTML</span><span class="mono" style="padding: 6px 12px; border-radius: 980px; background: rgba(255,255,255,0.08); font-size: 12px; color: #e5e5ea">CSS</span><span class="mono" style="padding: 6px 12px; border-radius: 980px; background: rgba(255,255,255,0.08); font-size: 12px; color: #e5e5ea">Python</span><span class="mono" style="padding: 6px 12px; border-radius: 980px; background: rgba(255,255,255,0.08); font-size: 12px; color: #e5e5ea">Chrome Extension</span></div>
+        </div>
+        <div aria-hidden="true" class="mono" style="flex: 1 1 320px; min-width: 0; padding: clamp(28px, 4vw, 44px); background: radial-gradient(90% 90% at 70% 30%, #2e1065, #16161a 75%); display: flex; flex-direction: column; justify-content: center; gap: 14px; font-size: 13px">
+          <div style="padding: 14px 16px; border-radius: 14px; background: rgba(255,255,255,0.06); color: #e5e5ea">
+            <div style="color: #8e8e93; padding-bottom: 6px">&lt;div class="product"&gt;</div>
+            <div class="hl" style="padding: 2px 6px; margin-left: 12px; border-radius: 6px; outline: 2px dashed #a78bfa">&lt;h2&gt;MacBook Air&lt;/h2&gt;</div>
+            <div class="hl hl2" style="padding: 2px 6px; margin-left: 12px; border-radius: 6px; outline: 2px dashed #a78bfa">&lt;span&gt;€ 999&lt;/span&gt;</div>
+          </div>
+          <div style="text-align: center; color: #a78bfa">↓ export</div>
+          <div style="padding: 14px 16px; border-radius: 14px; background: rgba(255,255,255,0.06); color: #e5e5ea; white-space: pre">&#123;
+  <span style="color: #82aaff">"title"</span>: <span style="color: #c3e88d">"MacBook Air"</span>,
+  <span style="color: #82aaff">"price"</span>: <span style="color: #f78c6c">999</span>
+&#125;</div>
+        </div>
+      </article>
+    </section>
+
+    <!-- STACK -->
+    <section id="stack" style="background: #ffffff; padding: 120px 22px">
+      <div style="max-width: 1120px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px">
+        <h2 class="reveal" style="margin: 0; font-size: clamp(40px, 6vw, 72px); line-height: 1; font-weight: 800; letter-spacing: -0.05em">Stack. <span style="color: #86868b">Gli attrezzi del mestiere.</span></h2>
+        <div class="reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 40px 32px">
+          <div style="display: flex; flex-direction: column; gap: 14px">
+            <p class="mono" style="margin: 0; font-size: 13px; font-weight: 600; color: #7c3aed">const linguaggi = [</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px">
+              <span class="chip" style="padding: 9px 15px; border-radius: 980px; background: #f5f5f7; font-size: 15px; font-weight: 500">Java</span>
+              <span class="chip" style="padding: 9px 15px; border-radius: 980px; background: #f5f5f7; font-size: 15px; font-weight: 500">Go</span>
+              <span class="chip" style="padding: 9px 15px; border-radius: 980px; background: #f5f5f7; font-size: 15px; font-weight: 500">PHP</span>
+              <span class="chip" style="padding: 9px 15px; border-radius: 980px; background: #f5f5f7; font-size: 15px; font-weight: 500">JavaScript</span>
+              <span class="chip" style="padding: 9px 15px; border-radius: 980px; background: #f5f5f7; font-size: 15px; font-weight: 500">Python</span>
+              <span class="chip" style="padding: 9px 15px; border-radius: 980px; background: #f5f5f7; font-size: 15px; font-weight: 500">HTML · CSS</span>
+            </div>
+            <p class="mono" style="margin: 0; font-size: 13px; font-weight: 600; color: #7c3aed">]</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 14px">
+            <p class="mono" style="margin: 0; font-size: 13px; font-weight: 600; color: #7c3aed">const framework = [</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px">
+              <span class="chip" style="padding: 9px 15px; border-radius: 980px; background: #f5f5f7; font-size: 15px; font-weight: 500">Vue.js</span>
+              <span class="chip" style="padding: 9px 15px; border-radius: 980px; background: #f5f5f7; font-size: 15px; font-weight: 500">Spring Boot</span>
+              <span class="chip" style="padding: 9px 15px; border-radius: 980px; background: #f5f5f7; font-size: 15px; font-weight: 500">Swing</span>
+              <span class="chip" style="padding: 9px 15px; border-radius: 980px; background: #f5f5f7; font-size: 15px; font-weight: 500">OpenAPI</span>
+              <span class="chip" style="padding: 9px 15px; border-radius: 980px; background: #f5f5f7; font-size: 15px; font-weight: 500">Bootstrap</span>
+            </div>
+            <p class="mono" style="margin: 0; font-size: 13px; font-weight: 600; color: #7c3aed">]</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 14px">
+            <p class="mono" style="margin: 0; font-size: 13px; font-weight: 600; color: #7c3aed">const dati_e_devops = [</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px">
+              <span class="chip" style="padding: 9px 15px; border-radius: 980px; background: #f5f5f7; font-size: 15px; font-weight: 500">MySQL</span>
+              <span class="chip" style="padding: 9px 15px; border-radius: 980px; background: #f5f5f7; font-size: 15px; font-weight: 500">SQLite</span>
+              <span class="chip" style="padding: 9px 15px; border-radius: 980px; background: #f5f5f7; font-size: 15px; font-weight: 500">UML</span>
+              <span class="chip" style="padding: 9px 15px; border-radius: 980px; background: #f5f5f7; font-size: 15px; font-weight: 500">Docker Compose</span>
+              <span class="chip" style="padding: 9px 15px; border-radius: 980px; background: #f5f5f7; font-size: 15px; font-weight: 500">Git · GitHub</span>
+            </div>
+            <p class="mono" style="margin: 0; font-size: 13px; font-weight: 600; color: #7c3aed">]</p>
+          </div>
+        </div>
+        <div class="reveal" style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding-top: 32px; border-top: 1px solid #e8e8ed">
+          <span class="mono" style="font-size: 13px; color: #6e6e73; padding-right: 6px">// e fuori dall'IDE:</span>
+          <span style="padding: 9px 15px; border-radius: 980px; background: #f5f3ff; color: #5b21b6; font-size: 15px; font-weight: 600">Comunicazione efficace</span>
+          <span style="padding: 9px 15px; border-radius: 980px; background: #f5f3ff; color: #5b21b6; font-size: 15px; font-weight: 600">Lavoro in team</span>
+          <span style="padding: 9px 15px; border-radius: 980px; background: #f5f3ff; color: #5b21b6; font-size: 15px; font-weight: 600">Problem solving</span>
+          <span style="padding: 9px 15px; border-radius: 980px; background: #f5f3ff; color: #5b21b6; font-size: 15px; font-weight: 600">Ascolto attivo</span>
+          <span style="padding: 9px 15px; border-radius: 980px; background: #f5f3ff; color: #5b21b6; font-size: 15px; font-weight: 600">Organizzazione</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERESSI -->
+    <section id="interessi" style="max-width: 1120px; margin: 0 auto; padding: 120px 22px 0; display: flex; flex-direction: column; gap: 40px">
+      <div class="reveal" style="display: flex; flex-direction: column; gap: 12px">
+        <h2 style="margin: 0; font-size: clamp(40px, 6vw, 72px); line-height: 1; font-weight: 800; letter-spacing: -0.05em">Interessi. <span style="color: #86868b">Quello che mi accende fuori dall'IDE.</span></h2>
+        <p class="mono" style="margin: 0; font-size: 14px; color: #6e6e73">for (const passione of simone.interessi) {</p>
+      </div>
+      <div class="reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px">
+        <article class="lift" style="padding: 32px; border-radius: 30px; background: #ffffff; display: flex; flex-direction: column; gap: 14px">
+          <div style="height: 64px; display: flex; align-items: flex-end">
+            <svg class="bounce" aria-hidden="true" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7l4 3-1.5 4.5h-5L8 10z"></path><path d="M12 3v4M16 10l4.5-1.5M14.5 14.5l2.5 4M9.5 14.5l-2.5 4M8 10L3.5 8.5"></path></svg>
+          </div>
+          <h3 style="margin: 0; font-size: 24px; font-weight: 700; letter-spacing: -0.025em">Sport</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.5; color: #6e6e73">Lo seguo a 360° e lo pratico. Mi ha insegnato disciplina, costanza e cosa vuol dire giocare per la squadra.</p>
+        </article>
+        <article class="lift" style="padding: 32px; border-radius: 30px; background: #ffffff; display: flex; flex-direction: column; gap: 14px">
+          <div style="height: 64px; display: flex; align-items: flex-end">
+            <svg aria-hidden="true" width="56" height="44" viewBox="0 0 30 24" fill="none" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22h26" stroke="#d2d2d7"></path><path class="draw" d="M3 19l7-6 5 4 11-12"></path><path d="M20 5h6v6"></path></svg>
+          </div>
+          <h3 style="margin: 0; font-size: 24px; font-weight: 700; letter-spacing: -0.025em">Imprenditoria</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.5; color: #6e6e73">Mi affascina come un'idea diventa un'azienda: startup, modelli di business, chi ce la fa e perché.</p>
+        </article>
+        <article class="lift" style="padding: 32px; border-radius: 30px; background: #7c3aed; color: #ffffff; display: flex; flex-direction: column; gap: 14px">
+          <div style="height: 64px; display: flex; align-items: flex-end">
+            <svg aria-hidden="true" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path class="twinkle" d="M11 2l2 5.5L18.5 9.5 13 11.5 11 17l-2-5.5L3.5 9.5 9 7.5z"></path><path class="twinkle" style="animation-delay: -1.2s" d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"></path></svg>
+          </div>
+          <h3 style="margin: 0; font-size: 24px; font-weight: 700; letter-spacing: -0.025em">Intelligenza artificiale</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.5; color: #ede9fe">La uso, la studio e la seguo da vicino: è il cambiamento più grande che vedrò nel mio settore.</p>
+        </article>
+        <article class="lift" style="padding: 32px; border-radius: 30px; background: #16161a; color: #f5f5f7; display: flex; flex-direction: column; gap: 14px">
+          <div class="mono" aria-hidden="true" style="position: relative; height: 64px; font-size: 12px; color: #a1a1a6">
+            <div style="color: #a78bfa">$ tail -f mondo.log</div>
+            <div class="f1" style="position: absolute; top: 24px; left: 0"><span style="color: #30d158">[tech]</span> nuovo modello rilasciato</div>
+            <div class="f2" style="position: absolute; top: 24px; left: 0"><span style="color: #febc2e">[eco]</span> mercati in apertura</div>
+            <div class="f3" style="position: absolute; top: 24px; left: 0"><span style="color: #ff6961">[sport]</span> risultato finale</div>
+          </div>
+          <h3 style="margin: 0; font-size: 24px; font-weight: 700; letter-spacing: -0.025em">Sempre aggiornato</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.5; color: #a1a1a6">Cerco di sapere ogni giorno cosa succede nel mondo e nei campi che mi appassionano.</p>
+        </article>
+      </div>
+      <p class="mono reveal" style="margin: 0; font-size: 14px; color: #6e6e73">}</p>
+    </section>
+
+    <!-- STORIA come git log -->
+    <section id="storia" style="padding: 120px 0">
+      <div class="reveal" style="max-width: 1120px; margin: 0 auto; padding: 0 22px 40px; display: flex; flex-direction: column; gap: 12px">
+        <h2 style="margin: 0; font-size: clamp(40px, 6vw, 72px); line-height: 1; font-weight: 800; letter-spacing: -0.05em">Storia. <span style="color: #86868b">Il mio git log.</span></h2>
+        <p class="mono" style="margin: 0; font-size: 14px; color: #6e6e73">$ git log --oneline --reverse   <span style="color: #86868b">← scorri →</span></p>
+      </div>
+      <ol class="row" style="list-style: none; margin: 0; display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 max(22px, calc((100% - 1076px) / 2)) 12px; scrollbar-width: none">
+        <li class="lift" style="flex: 0 0 290px; scroll-snap-align: start; padding: 28px; border-radius: 28px; background: #ffffff; display: flex; flex-direction: column; gap: 10px">
+          <p class="mono" style="margin: 0; font-size: 12px; color: #6e6e73"><span style="color: #7c3aed">e3a91f0</span> · 2016–2021</p>
+          <h3 style="margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.02em">init: ITIS Enrico Fermi</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #6e6e73">Diploma in Informatica e Telecomunicazioni a Roma, con 90/100.</p>
+        </li>
+        <li class="lift" style="flex: 0 0 290px; scroll-snap-align: start; padding: 28px; border-radius: 28px; background: #ffffff; display: flex; flex-direction: column; gap: 10px">
+          <p class="mono" style="margin: 0; font-size: 12px; color: #6e6e73"><span style="color: #7c3aed">4b7c2d1</span> · apr 2019</p>
+          <h3 style="margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.02em">feat: inglese B1 a Oxford</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #6e6e73">Una settimana di stage e la certificazione di livello B1.</p>
+        </li>
+        <li class="lift" style="flex: 0 0 290px; scroll-snap-align: start; padding: 28px; border-radius: 28px; background: #ffffff; display: flex; flex-direction: column; gap: 10px">
+          <p class="mono" style="margin: 0; font-size: 12px; color: #6e6e73"><span style="color: #7c3aed">9f0e6a3</span> · estati 2019–2026</p>
+          <h3 style="margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.02em">chore: le estati in spiaggia</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #6e6e73">Lavoro stagionale, solo d'estate, ai servizi di spiaggia del Singita Miracle Beach di Fregene: clienti, imprevisti e picchi di affluenza, sempre in squadra.</p>
+        </li>
+        <li class="lift" style="flex: 0 0 290px; scroll-snap-align: start; padding: 28px; border-radius: 28px; background: #ffffff; display: flex; flex-direction: column; gap: 10px">
+          <p class="mono" style="margin: 0; font-size: 12px; color: #6e6e73"><span style="color: #7c3aed">c51d8b4</span> · set 2020</p>
+          <h3 style="margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.02em">feat: Cisco IT Essentials</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #6e6e73">Configurazione, installazione e gestione di sistemi e reti.</p>
+        </li>
+        <li class="lift" style="flex: 0 0 290px; scroll-snap-align: start; padding: 28px; border-radius: 28px; background: #ffffff; display: flex; flex-direction: column; gap: 10px">
+          <p class="mono" style="margin: 0; font-size: 12px; color: #6e6e73"><span style="color: #7c3aed">07aa3e9</span> · ago 2022</p>
+          <h3 style="margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.02em">fix: spiagge più pulite</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #6e6e73">Volontariato con il WWF tra Fiumicino e Fregene.</p>
+        </li>
+        <li class="lift" style="flex: 0 0 290px; scroll-snap-align: start; padding: 28px; border-radius: 28px; background: #ffffff; display: flex; flex-direction: column; gap: 10px">
+          <p class="mono" style="margin: 0; font-size: 12px; color: #6e6e73"><span style="color: #7c3aed">5d2f71c</span> · ott 2022</p>
+          <h3 style="margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.02em">feat: Informatica alla Sapienza</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #6e6e73">Triennale telematica: web full-stack, OOP, database e sicurezza.</p>
+        </li>
+        <li class="lift" style="flex: 0 0 290px; scroll-snap-align: start; padding: 28px; border-radius: 28px; background: #ffffff; display: flex; flex-direction: column; gap: 10px">
+          <p class="mono" style="margin: 0; font-size: 12px; color: #6e6e73"><span style="color: #7c3aed">a8e40b2</span> · gen–mag 2025</p>
+          <h3 style="margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.02em">feat: Programma GOL</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #6e6e73">Corso Regione Lazio su Java SE, Java EE, Spring Boot e front-end.</p>
+        </li>
+        <li class="lift" style="flex: 0 0 290px; scroll-snap-align: start; padding: 28px; border-radius: 28px; background: #7c3aed; color: #ffffff; display: flex; flex-direction: column; gap: 10px">
+          <p class="mono" style="margin: 0; font-size: 12px; color: #ddd6fe">HEAD → main · dic 2026</p>
+          <h3 style="margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.02em">release: v1.0 laurea</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #ede9fe">Laurea triennale in Informatica. Prossimo commit: il primo ruolo da developer.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- CONTATTI -->
+    <section id="contatti" style="padding: 0 16px 16px">
+      <div class="reveal" style="max-width: 1180px; margin: 0 auto; padding: clamp(64px, 10vw, 120px) 28px; border-radius: 40px; background: #7c3aed; color: #ffffff; display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center">
+        <h2 style="margin: 0; max-width: 820px; font-size: clamp(44px, 7vw, 88px); line-height: 0.98; font-weight: 800; letter-spacing: -0.05em">Il prossimo commit potrebbe essere con te.</h2>
+        <button type="button" id="hire" class="mono" style="min-height: 52px; padding: 0 26px; border: 0; border-radius: 14px; background: #16161a; color: #e5e5ea; font-size: 16px; cursor: pointer">$ sudo hire simone</button>
+        
+          <a id="mail" hidden href="mailto:vergari.simone37@gmail.com" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 30px; border-radius: 980px; background: #ffffff; color: #1d1d1f; font-size: 18px; font-weight: 600">vergari.simone37@gmail.com</a>
+        
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 28px; font-size: 16px; font-weight: 600">
+          <a href="mailto:vergari.simone37@gmail.com" style="color: #ffffff">Email ↗</a>
+          <a href="https://github.com/VergariSimone" target="_blank" rel="noopener" style="color: #ffffff">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/simone-vergari-77041a218/" target="_blank" rel="noopener" style="color: #ffffff">LinkedIn ↗</a>
+          <a href="Simone_Vergari_CV.pdf" download="Simone_Vergari_CV.pdf" style="color: #ffffff">Scarica il CV ↓</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="max-width: 1120px; margin: 0 auto; padding: 28px 22px 40px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 12px; color: #6e6e73">
+    <span>© 2026 Simone Vergari · Fiumicino (RM)</span>
+    <span class="mono">compilato con ☕ e Docker · 0 warning</span>
+  </footer>
+</div>
+<script>
+var LINES = [
+  { cmd: 'whoami', note: 'chi sono?', out: 'simone vergari — junior software developer' },
+  { cmd: 'simone --stack', note: 'le tecnologie che uso', out: 'go · vue.js · java · php · docker' },
+  { cmd: 'simone --interessi', note: 'cosa mi appassiona', out: 'sport · imprenditoria · ai · attualità' },
+  { cmd: 'git status', note: 'a che punto sono', out: 'laurea in informatica: in arrivo (dic 2026)' },
+  { cmd: 'ls progetti/', note: 'cosa ho costruito', out: 'wasatext/  jtresette/  sql-injection-lab/' }
+];
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var el=document.getElementById('scramble'), G='!<>-_/[]{}=+*^?#01', T='Simone', f=0;
+  if(!reduce){var sc=setInterval(function(){f++;var o='';for(var i=0;i<T.length;i++)o+=i<f/3?T[i]:G[Math.floor(Math.random()*G.length)];el.textContent=o;if(f>=T.length*3){clearInterval(sc);el.textContent=T;}},50);}
+  var box=document.getElementById('termlines'), cur=document.getElementById('termcur'), li=0, ci=0, wait=0;
+  function add(l){var a=document.createElement('div');a.innerHTML='<span style="color:#a78bfa">❯</span> ';a.appendChild(document.createTextNode(l.cmd+' '));var n=document.createElement('span');n.style.color='#6e6e73';n.textContent='# '+l.note;a.appendChild(n);var b=document.createElement('div');b.style.cssText='color:#8e8e93;padding-bottom:8px;white-space:pre-wrap';b.textContent=l.out;box.appendChild(a);box.appendChild(b);}
+  if(reduce){LINES.forEach(add);}else{var t=setInterval(function(){if(li>=LINES.length){clearInterval(t);cur.textContent='';return;}var c=LINES[li].cmd;if(ci<c.length){ci++;cur.textContent=c.slice(0,ci);return;}if(wait<14){wait++;return;}add(LINES[li]);li++;ci=0;wait=0;cur.textContent='';},55);}
+  var nav=document.getElementById('navlinks'), bur=document.getElementById('burger');
+  function set(o){nav.classList.toggle('open',o);bur.classList.toggle('open',o);bur.setAttribute('aria-expanded',o);bur.setAttribute('aria-label',o?'Chiudi menu':'Apri menu');}
+  bur.addEventListener('click',function(){set(!nav.classList.contains('open'));});
+  document.querySelectorAll('[data-close]').forEach(function(a){a.addEventListener('click',function(){set(false);});});
+  var h=document.getElementById('hire'), m=document.getElementById('mail'), st=0;
+  h.addEventListener('click',function(){if(st)return;st=1;h.textContent='[sudo] password: ********';setTimeout(function(){h.textContent='✓ accesso concesso';m.hidden=false;},900);});
+})();
+
+</script>
+</body>
+</html>
